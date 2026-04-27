@@ -7,6 +7,7 @@ import com.matheus.bffagendadortarefas.business.dto.in.UsuarioDTORequest;
 import com.matheus.bffagendadortarefas.business.dto.out.EnderecoDTOResponse;
 import com.matheus.bffagendadortarefas.business.dto.out.TelefoneDTOResponse;
 import com.matheus.bffagendadortarefas.business.dto.out.UsuarioDTOResponse;
+import com.matheus.bffagendadortarefas.business.dto.out.ViaCepDTOResponse;
 import com.matheus.bffagendadortarefas.infrastructure.client.UsuarioClient;
 
 import lombok.RequiredArgsConstructor;
@@ -57,6 +58,10 @@ public class UsuarioService {
 
     public TelefoneDTOResponse cadastraTelefone(String token, TelefoneDTORequest dto){
        return usuarioClient.cadastraTelefone(dto,token);
+    }
+
+    public ViaCepDTOResponse buscarEnderecoPorCep(String cep){
+        return usuarioClient.buscarDadosCep(cep);
     }
 
 }
